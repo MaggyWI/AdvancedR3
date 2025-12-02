@@ -16,3 +16,5 @@ Suggests:
     gitcreds,
     styler,
     usethis
+URL: https://github.com/MaggyWI/AdvancedR3
+BugReports: https://github.com/MaggyWI/AdvancedR3/issues
