@@ -12,7 +12,8 @@ Imports:
     snakecase,
     stringr,
     targets,
-    tidyr
+    tidyr,
+    visNetwork
 Suggests: 
     gitcreds,
     styler,
