@@ -2,3 +2,4 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 data|stem|79ac796b9d57e900|87f5902ed953433b|2c530c1562a7fbd1|33550471||t20424.5481997601s|s1743b|1743|rds|local|vector|||0.03||
 model|stem|90ae394a2e86538a|693e4c90d947b5eb|6b1c0d8cb3e6b67d|808688450||t20424.5482025516s|s108b|108|rds|local|vector|||0||
 file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20416.58240311s|s24277b|24277|file|local|vector|||0||
+lipidomics|stem|9b1dc04222b319e0|0adf46d83f39a429|e88672c19d0c6d6c|-1498393010||t20424.5778825907s|s4884b|4884|rds|local|vector|||1.69||
