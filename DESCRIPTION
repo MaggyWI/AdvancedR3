@@ -6,22 +6,16 @@ Encoding: UTF-8
 Imports: 
     dplyr,
     fs,
-    glue,
     here,
-    quarto,
     readr,
     readxl,
     snakecase,
     stringr,
-    tarchetypes,
     targets,
     tidyr,
-    visNetwork
 Suggests: 
     gitcreds,
     styler,
     usethis
 URL: https://github.com/MaggyWI/AdvancedR3
 BugReports: https://github.com/MaggyWI/AdvancedR3/issues
-Depends: 
-    tidyverse
