@@ -12,3 +12,6 @@ Imports:
     snakecase,
     stringr,
     tidyr
+Suggests: 
+    styler,
+    usethis
