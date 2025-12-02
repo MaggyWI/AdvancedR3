@@ -4,9 +4,8 @@ author: "Ingrid M. Wagnon"
 format: html
 ---
 
-## Header 1
-
 ```{r setup}
+library(tidyverse)
 library(targets)
 tar_config_set(store = here::here("_targets"))
 source(here::here("R/functions.R"))
@@ -14,8 +13,15 @@ lipidomics <- tar_read(lipidomics)
 
 ```
 
+## Making a table
+
 ```{r}
-# Code chunk
+lipidomics |>
+  group_by(metabolite) |>
+  summarise(across(value, list(mean = mean, sd = sd))) |>
+  mutate(across(where(is.numeric), \(x) round(x, digits = 1))) |>
+  mutate(MeanSD = glue::glue("{value_mean} ({value_sd})")) |>
+  select(Metabolite = metabolite, `Mean SD` = MeanSD)
 ```
 
 ## This is poorly formatted
