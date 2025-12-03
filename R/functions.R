@@ -67,3 +67,25 @@ preprocess <- function(data) {
       value = scale(value)
     )
 }
+
+
+#' Fit the model to the data and get the results.
+#'
+#' @param data The data to fit.
+#' @param model The formula.
+#'
+#' @returns A data frame of the results.
+#'
+fit_model <- function(data, model) {
+  glm(
+    formula = model,
+    data = data,
+    family = binomial
+  ) |>
+    broom::tidy(exponentiate = TRUE) |>
+    dplyr::mutate(
+      metabolite = unique(just_cholesterol$metabolite),
+      model = format(model),
+      .before = everything()
+    )
+}
