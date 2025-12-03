@@ -15,7 +15,7 @@ lipidomics <- tar_read(lipidomics)
 ## Making a table
 
 ```{r}
-  lipidomics |>
+lipidomics |>
   group_by(metabolite) |>
   summarise(across(value, list(mean = mean, sd = sd))) |>
   mutate(across(where(is.numeric), \(x) round(x, digits = 1))) |>
@@ -25,4 +25,13 @@ lipidomics <- tar_read(lipidomics)
 
 ```{r}
 create_table_descriptive_stats(lipidomics)
+```
+
+## Results: Basic stats table
+
+```{r}
+tar_read(table_descriptive_stats) |>
+  knitr::kable(
+    caption = "The mean and standard deviation of metabolites in the lipidomics dataset."
+  )
 ```

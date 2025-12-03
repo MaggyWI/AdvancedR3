@@ -13,6 +13,7 @@ Imports:
     stringr,
     targets,
     tidyr,
+    tidyselect
 Suggests: 
     gitcreds,
     styler,
