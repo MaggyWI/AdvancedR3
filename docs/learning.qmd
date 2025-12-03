@@ -126,3 +126,51 @@ lipidomics |>
 ```{r}
 create_model_results(lipidomics)
 ```
+
+## Running multiple models
+
+Idea : Extract list of metabolites as vector For each metabolites
+preprocess and fit model (should include as many models as we need in
+the function). Maybe we can use map ? So for each metabolite it will run
+the function that clean/process and then run the model.
+
+```{r}
+just_cholesterol <- lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  preprocess()
+```
+
+```{r}
+list(
+  class ~ value,
+  class ~ value + gender + age
+)
+```
+
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAUCAYAAACnOeyiAAAAXklEQVR4XmNgAIL///8zMYSGhjIDGYIMIiIMvECGMwMDN4M4kFEDUqIIZKwDMdSBjAsghj6Q8QPEMAAy/lOBoQekv4AYKkDGfgZeXl4RICOLQUtLiw3IUAJJMQIZ7AC2tU2tJWCy/wAAAABJRU5ErkJggg==
+Because the fit_model() function we created earlier takes two arguments,
+data and model, we need to tell map() how to use those arguments
+properly. Normally, map() will give the items from the list to the first
+argument of the function, which is data in our case. However, we want
+the items from the list to go to the model argument instead. So, we have
+to use the “anonymous function” (x) syntax to correctly put the model
+items. In the anonymous function, we’ll use model as an argument, since
+that is what is coming from list() and then use just_cholesterol as the
+data argument in fit_model().
+
+```{r}
+list(
+  class ~ value,
+  class ~ value + gender + age
+) |>
+  map(\(model) fit_model(just_cholesterol, model = model)) |>
+  list_rbind()
+```
+
+```{r}
+lipidomics |>
+  filter(metabolite == "Cholesterol") |>
+  preprocess() |>
+  fit_all_models()
+```
+

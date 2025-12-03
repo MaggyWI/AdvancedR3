@@ -9,6 +9,7 @@ Imports:
     fs,
     ggplot2,
     here,
+    purrr,
     readr,
     readxl,
     snakecase,
