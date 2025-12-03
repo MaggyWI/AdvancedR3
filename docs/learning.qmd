@@ -183,3 +183,10 @@ lipidomics |>
   map(fit_all_models) |>
   list_rbind()
 ```
+
+## Appendix
+
+```{r}
+tar_read(model_results) |>
+  knitr::kable(caption = "Results from the analysis from all metabolites and models.")
+```
