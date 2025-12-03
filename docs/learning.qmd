@@ -48,3 +48,9 @@ ggplot(lipidomics, aes(x = value)) +
 ```{r}
 create_plot_distributions(lipidomics)
 ```
+
+## Results: Distribution plot
+
+```{r}
+tar_read(plot_distributions)
+```

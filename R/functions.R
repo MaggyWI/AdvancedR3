@@ -21,13 +21,13 @@ create_table_descriptive_stats <- function(data) {
 #'
 #' @param data table of data
 #'
-#' @returns histograms
+#' @returns a plot object
 #'
 create_plot_distributions <- function(data) {
-  plotdistrib <-
-    ggplot2::ggplot(data, aes(x = value)) +
+  plotdistrib <- data |>
+  ggplot2::ggplot(ggplot2::aes(x = value)) +
     ggplot2::geom_histogram() +
-    ggplot2::facet_wrap(vars(metabolite), scales = "free") +
+    ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free") +
     ggplot2::theme_minimal()
   return(plotdistrib)
 }
