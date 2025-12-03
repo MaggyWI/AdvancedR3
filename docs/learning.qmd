@@ -174,3 +174,12 @@ lipidomics |>
   fit_all_models()
 ```
 
+## Running all metabolites
+
+```{r}
+lipidomics |>
+  group_split(metabolite) |>
+  map(preprocess) |>
+  map(fit_all_models) |>
+  list_rbind()
+```
