@@ -52,5 +52,6 @@ create_plot_distributions(lipidomics)
 ## Results: Distribution plot
 
 ```{r}
+#| fig-cap: "Plot Distribution"
 tar_read(plot_distributions)
 ```

@@ -30,6 +30,11 @@ create_plot_distributions <- function(data) {
     ggplot2::ggplot(ggplot2::aes(x = value)) +
     ggplot2::geom_histogram() +
     ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free") +
-    ggplot2::theme_minimal()
+    ggplot2::theme_classic() +
+    ggplot2::labs(title = "Lipidomics Values") +
+    ggplot2::labs(
+      x = "Metabolite Value",
+      y = "Count"
+    )
   return(plotdistrib)
 }
