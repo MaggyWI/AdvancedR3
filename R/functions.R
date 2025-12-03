@@ -1,4 +1,4 @@
-#' Crreating a table with descriptive stat
+#' Creating a table with descriptive stat
 #'
 #' @param data Give the data
 #'
@@ -13,4 +13,21 @@ create_table_descriptive_stats <- function(data) {
     dplyr::mutate(MeanSD = glue::glue("{value_mean} ({value_sd})")) |>
     dplyr::select(Metabolite = metabolite, `Mean SD` = MeanSD)
   return(tablestat)
+}
+
+
+
+#' Plot distribution metabolites value
+#'
+#' @param data table of data
+#'
+#' @returns histograms
+#'
+create_plot_distributions <- function(data) {
+  plotdistrib <-
+    ggplot2::ggplot(data, aes(x = value)) +
+    ggplot2::geom_histogram() +
+    ggplot2::facet_wrap(vars(metabolite), scales = "free") +
+    ggplot2::theme_minimal()
+  return(plotdistrib)
 }

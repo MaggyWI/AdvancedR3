@@ -44,3 +44,7 @@ ggplot(lipidomics, aes(x = value)) +
   facet_wrap(vars(metabolite), scales = "free") +
   theme_minimal()
 ```
+
+```{r}
+create_plot_distributions(lipidomics)
+```
