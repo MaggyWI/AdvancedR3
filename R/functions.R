@@ -38,3 +38,17 @@ create_plot_distributions <- function(data) {
     )
   return(plotdistrib)
 }
+
+
+#' Do some cleaning to fix issues in the data.
+#'
+#' @param data The lipidomics data frame.
+#'
+#' @returns A data frame.
+#'
+clean <- function(data) {
+  data |>
+    dplyr::group_by(dplyr::pick(-value)) |>
+    dplyr::summarise(value = mean(value), .groups = "keep") |>
+    dplyr::ungroup()
+}

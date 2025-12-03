@@ -2,9 +2,10 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 data|stem|79ac796b9d57e900|87f5902ed953433b|2c530c1562a7fbd1|33550471||t20424.5481997601s|s1743b|1743|rds|local|vector|||0.03||
 model|stem|90ae394a2e86538a|693e4c90d947b5eb|6b1c0d8cb3e6b67d|808688450||t20424.5482025516s|s108b|108|rds|local|vector|||0||
 file|stem|c44b806f3841f535|09442fac263aded2|2c530c1562a7fbd1|1735323524|data/lipidomics.csv|t20416.58240311s|s24277b|24277|file|local|vector|||0||
-lipidomics|stem|9b1dc04222b319e0|0adf46d83f39a429|e88672c19d0c6d6c|-1498393010||t20424.5778825907s|s4884b|4884|rds|local|vector|||1.69||
-table_descriptive_stats|stem|ecae5609fb4eaec1|34e33bc9eaef7fce|bf8b80bae3629fbc|1291134815||t20425.3938835297s|s518b|518|rds|local|vector|||0.01||
+lipidomics|stem|6d85720faf446486|e7a0b51b4c5fd316|8766f2d0e3176a68|-1498393010||t20425.5388639986s|s4137b|4137|rds|local|vector|||1.94||
+plot_distributions|stem|6dc9c1aede682306|01ce942be37808d6|2ca5be35c67a6a63|222080706||t20425.5388901405s|s390741b|390741|rds|local|vector|||2.08||
+table_descriptive_stats|stem|0e1a2623a0001a4e|34e33bc9eaef7fce|2a7b25b9a687a31c|1291134815||t20425.5388917959s|s519b|519|rds|local|vector|||0.02||
+quarto_doc|stem|950020c98546416c|17ff11b3307356f6|e31fb839a7a8b93f|1582462002|docs/learning.html*docs/learning.qmd|t20425.539319285s|s32677b|32677|file|local|vector|||36.92||
+clean|function|ce06151f5b2133d2
 create_table_descriptive_stats|function|847757163d284338
 create_plot_distributions|function|f7ac5a21c18a05fb
-plot_distributions|stem|2006998ddf14b85f|01ce942be37808d6|4bfcc48c144b79a2|222080706||t20425.4044532036s|s394540b|394540|rds|local|vector|||0.59||
-quarto_doc|stem|03a3855b45052a26|17ff11b3307356f6|14ab79a608b2a238|1582462002|docs/learning.html*docs/learning.qmd|t20425.4046506919s|s32677b|32677|file|local|vector|||17.14||
