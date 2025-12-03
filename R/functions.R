@@ -84,9 +84,9 @@ fit_model <- function(data, model) {
   ) |>
     broom::tidy(exponentiate = TRUE) |>
     dplyr::mutate(
-      metabolite = unique(just_cholesterol$metabolite),
+      metabolite = unique(data$metabolite),
       model = format(model),
-      .before = everything()
+      .before = tidyselect::everything()
     )
 }
 

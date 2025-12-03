@@ -79,6 +79,12 @@ clean(lipidomics)
 lipidomics
 ```
 
+Now, let’s mutate our data to convert class to a factor variable and
+scale value using the scale() function. The scale() function
+mean-centers and scales the values so that they have a mean of 0 and
+standard deviation of 1. This makes certain that each metabolite will
+have the same unit and similar distribution shape.
+
 ```{r}
 lipidomics |>
   filter(metabolite == "Cholesterol") |>
@@ -86,6 +92,10 @@ lipidomics |>
     class = as.factor(class),
     value = scale(value)
   )
+```
+
+```{r}
+preprocess(lipidomics)
 ```
 
 ```{r}
@@ -111,4 +121,8 @@ lipidomics |>
   filter(metabolite == "Cholesterol") |>
   preprocess() |>
   fit_model(class ~ value)
+```
+
+```{r}
+create_model_results(lipidomics)
 ```
