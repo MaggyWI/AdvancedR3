@@ -209,6 +209,10 @@ model_results |>
   facet_grid(cols = vars(model))
 ```
 
+```{r}
+create_plot_model_results(model_results)
+```
+
 ## Appendix
 
 ```{r}
