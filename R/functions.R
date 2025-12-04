@@ -140,5 +140,14 @@ create_plot_model_results <- function(results) {
     )) +
     ggplot2::geom_pointrange() +
     ggplot2::geom_vline(xintercept = 1, linetype = "dashed") +
-    ggplot2::facet_grid(cols = ggplot2::vars(model))
+    ggplot2::facet_grid(cols = ggplot2::vars(model)) +
+    ggplot2::theme_bw() +
+    ggplot2::labs(title = "Fitting Models") +
+    ggplot2::labs(
+      y = "Metabolites from Lipidomics",
+      x = "Estimates"
+    ) +
+    ggplot2::theme(
+      plot.title = ggplot2::element_text(hjust = 0.5)
+    )
 }
