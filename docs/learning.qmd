@@ -129,10 +129,11 @@ create_model_results(lipidomics)
 
 ## Running multiple models
 
-Idea : Extract list of metabolites as vector For each metabolites
-preprocess and fit model (should include as many models as we need in
-the function). Maybe we can use map ? So for each metabolite it will run
-the function that clean/process and then run the model.
+Idea : Complete the function to have both model inside : metabolite
+value + metabolites value/age/sex \<- make that a vector to apply to a
+function. Extract list of metabolites as vector For each metabolites
+preprocess and fit model. Maybe we can use map ? So for each metabolite
+it will run the function that clean/process and then run the model.
 
 ```{r}
 just_cholesterol <- lipidomics |>
@@ -147,7 +148,6 @@ list(
 )
 ```
 
-data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAUCAYAAACnOeyiAAAAXklEQVR4XmNgAIL///8zMYSGhjIDGYIMIiIMvECGMwMDN4M4kFEDUqIIZKwDMdSBjAsghj6Q8QPEMAAy/lOBoQekv4AYKkDGfgZeXl4RICOLQUtLiw3IUAJJMQIZ7AC2tU2tJWCy/wAAAABJRU5ErkJggg==
 Because the fit_model() function we created earlier takes two arguments,
 data and model, we need to tell map() how to use those arguments
 properly. Normally, map() will give the items from the list to the first
@@ -182,6 +182,31 @@ lipidomics |>
   map(preprocess) |>
   map(fit_all_models) |>
   list_rbind()
+```
+
+## Figure of model estimates
+
+```{r}
+model_results <- tar_read(model_results)
+```
+
+In the graph some std.error were too big so we filter for those under 2
+and some estimate were also not realistic so we filter those under 5 -
+But might not be necessary in real dataset.
+
+```{r}
+model_results |>
+  filter(term == "value", std.error <= 2, estimate <= 5) |>
+  select(metabolite, model, estimate, std.error) |>
+  ggplot(aes(
+    x = estimate,
+    y = metabolite,
+    xmin = estimate - std.error,
+    xmax = estimate + std.error
+  )) +
+  geom_pointrange() +
+  geom_vline(xintercept = 1, linetype = "dashed") +
+  facet_grid(cols = vars(model))
 ```
 
 ## Appendix

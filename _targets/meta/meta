@@ -13,4 +13,4 @@ create_table_descriptive_stats|function|847757163d284338
 create_plot_distributions|function|f7ac5a21c18a05fb
 fit_all_models|function|5f78ca033152fae7
 create_model_results|function|5f7642559308fff2
-quarto_doc|stem|7f8bcc92cd151af6|84a9b6a5242fc083|de9606454e3c129e|1582462002|docs/learning.html*docs/learning.qmd|t20425.6251277645s|s88566b|88566|file|local|vector|||15.78||
+quarto_doc|stem|7f8bcc92cd151af6|84a9b6a5242fc083|de9606454e3c129e|1582462002|docs/learning.html*docs/learning.qmd|t20425.6255943444s|s88566b|88566|file|local|vector|||15.78||
