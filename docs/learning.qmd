@@ -213,6 +213,12 @@ model_results |>
 create_plot_model_results(model_results)
 ```
 
+## Model Plot
+
+```{r}
+tar_read(plot_model_results)
+```
+
 ## Appendix
 
 ```{r}
